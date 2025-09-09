@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pidañapumple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffeef2;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #e91e63;
+            margin-bottom: 40px;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-size: 18px;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border: 2px solid #e91e63;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ad1457;
+        }
+        .error {
+            color: #d32f2f;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pidañapumple</h1>
+
+    <label for="respuesta1">1. ¿Dónde nos conocimos?</label>
+    <input type="text" id="respuesta1" placeholder="Escribe la respuesta" autocomplete="off">
+
+    <label for="respuesta2">2. ¿Qué quiero contigo a futuro?</label>
+    <input type="text" id="respuesta2" placeholder="Escribe la respuesta" autocomplete="off">
+
+    <button onclick="verificarRespuestas()">Enviar</button>
+
+    <p class="error" id="mensajeError"></p>
+
+    <script>
+        function verificarRespuestas() {
+            const r1 = document.getElementById("respuesta1").value.trim().toLowerCase();
+            const r2 = document.getElementById("respuesta2").value.trim().toLowerCase();
+            if (r1 === "conalep" && r2 === "una familia") {
+                window.location.href = "felicidades.html";
+            } else {
+                document.getElementById("mensajeError").textContent = "Ups… alguna respuesta no es correcta. ¡Intenta de nuevo!";
+            }
+        }
+    </script>
+
+</body>
+</html>
